@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <title>FHS Time Budget Planner</title>
+    <link href="styles.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amarante&family=Faculty+Glyphic&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gravitas+One&display=swap" rel="stylesheet">
+  </head>
+   
+  <body>
+    <header class="sticky-header1">
+      <div class="col21">
+          <img src="FolsomHighBullDog.png" alt="Folsom High Bulldog" width="100" height="100">
+      </div>
+      <div class="col22">
+        <bannerText style="font-weight: bold; font-size:18px;">Folsom High School</bannerText>
+        <bannerText style="font-style: italic; color: #d33b1d; font-size: 14px;">Home of the Bulldogs</bannerText>
+      </div>
+      <div class="col23">
+        <h1 style="font-weight:bold;">FHS Time Budget Planner</h1>
+      </div>
+    </header>
+
+    <main class="planner-container">
+      <h2 style="text-align: center;">School Time</h2>
+      <h3>How Many Classes Do You Take?</h3>
+      <div class="slider-group-container">
+        <input type="range" class="schoolDaysSlider" id="numDaysSlider" min="4" max="7">
+        <span class="period-label">
+          <span id="numPeriods">4</span> classes
+        </span>
+      </div>
+      <div class="numDaysContainer">
+        <h4>Number of Hours in School:</h4>
+        <div class="hours-row">
+          <span id="numDaysVal">0</span> hours per week
+        </div>
+      </div>
+      
+      <hr class="hl">
+
+      <h2 class="cAndHTime">Homework Time</h2>
+      <h3>Homework Time Per Class</h3>
+      <p class="disclaimer">Please leave it as "Select a Class" if you do not have a class in that section. All hours are listed per 7-day week. Hours are teacher reported and averaged. You cannot select a lower amount than the average.</p>
+      <br>
+
+      <div class="homework-columns-container" style="overflow: hidden; width: 100%;">
+        <div id="classCol1" style="width: 47%; float: left; margin-left: 30px;">
+          <div class="planner-row" id="row-a">
+            <label class="subjName" style="font-size:18px;">History:</label>
+            <select class="dropdown"><option value="" selected>Select a Class</option></select>
+            <input type="range" class="slider" min="0" max="100" disabled>
+            <span class="value-container"><span class="slider-value">0</span> hour(s)</span>
+          </div>
+
+          <div class="planner-row" id="row-b">
+            <label class="subjName" style="font-size:18px;">English:</label>
+            <select class="dropdown"><option value="" selected>Select a Class</option></select>
+            <input type="range" class="slider" min="0" max="100" disabled>
+            <span class="value-container"><span class="slider-value">0</span> hour(s)</span>
+          </div>
+
+          <div class="planner-row" id="row-c">
+            <label class="subjName" style="font-size:18px;">Math:</label>
+            <select class="dropdown"><option value="" selected>Select a Class</option></select>
+            <input type="range" class="slider" min="0" max="100" disabled>
+            <span class="value-container"><span class="slider-value">0</span> hour(s)</span>
+          </div>
+
+          <div class="planner-row" id="row-d">
+            <label class="subjName" style="font-size:18px;">Science:</label>
+            <select class="dropdown"><option value="" selected>Select a Class</option></select>
+            <input type="range" class="slider" min="0" max="100" disabled>
+            <span class="value-container"><span class="slider-value">0</span> hour(s)</span>
+          </div>
+
+          <div class="planner-row" id="row-e">
+            <label class="subjName" style="font-size:18px;">World Language:</label>
+            <select class="dropdown"><option value="" selected>Select a Class</option></select>
+            <input type="range" class="slider" min="0" max="100" disabled>
+            <span class="value-container"><span class="slider-value">0</span> hour(s)</span>
+          </div>
+        </div>
+
+        <div id="classCol2" style="width: 47%; float: right; margin-right: 30px;">
+          <div class="planner-row" id="row-f">
+            <label class="subjName" style="font-size:18px;">Visual & Performing Art:</label>
+            <select class="dropdown"><option value="" selected>Select a Class</option></select>
+            <input type="range" class="slider" min="0" max="100" disabled>
+            <span class="value-container"><span class="slider-value">0</span> hour(s)</span>
+          </div>
+
+          <div class="planner-row" id="row-g">
+            <label class="subjName" style="font-size:18px;">College Prep:</label>
+            <select class="dropdown"><option value="" selected>Select a Class</option></select>
+            <input type="range" class="slider" min="0" max="100" disabled>
+            <span class="value-container"><span class="slider-value">0</span> hour(s)</span>
+          </div>
+
+          <div class="planner-row" id="row-all1">
+            <label class="subjName" style="font-size:18px;">Elective 1:</label>
+            <select class="dropdown"><option value="" selected>Select a Class</option></select>
+            <input type="range" class="slider" min="0" max="100" disabled>
+            <span class="value-container"><span class="slider-value">0</span> hour(s)</span>
+          </div>
+
+          <div class="planner-row" id="row-all2">
+            <label class="subjName" style="font-size:18px;">Elective 2:</label>
+            <select class="dropdown"><option value="" selected>Select a Class</option></select>
+            <input type="range" class="slider" min="0" max="100" disabled>
+            <span class="value-container"><span class="slider-value">0</span> hour(s)</span>
+          </div>
+        </div>
+      </div>
+      
+      <div style="clear: both;"></div>
+      <hr class="hl" style="margin-top: 25px;">
+      
+      <p style="font-weight: bold; text-align: center; color: #721a08;">All hours are listed per 7-day week.</p>
+      
+      <div id="necessities"></div>
+
+      <div class="personal-necessities-row">  
+        <h2 style="text-align: center;">Personal Time</h2>
+        <div class="colPerNec1">
+          <div class="personalSliders">
+            <div class="athletics personal-row">
+              <label class="personalSubheads">Athletics: </label>
+              <input type="range" class="personal-slider" id="slider-athletics" min="0" max="25" value="0">
+              <span class="value-container"><span class="personal-count" id="count-athletics">0</span> hour(s)</span>
+            </div>
+            <hr class="hl">
+
+            <div class="schoolClubs personal-row">
+              <label class="personalSubheads">School Clubs: </label>
+              <input type="range" class="personal-slider" id="slider-clubs" min="0" max="25" value="0">
+              <span class="value-container"><span class="personal-count" id="count-clubs">0</span> hour(s)</span>
+            </div>
+            <hr class="hl">
+
+            <div class="job personal-row">
+              <label class="personalSubheads">Job: </label>
+              <input type="range" class="personal-slider" id="slider-job" min="0" max="25" value="0">
+              <span class="value-container"><span class="personal-count" id="count-job">0</span> hour(s)</span>
+            </div>
+            <hr class="hl">
+
+            <div class="religiousActivities personal-row">
+              <label class="personalSubheads">Religious Activities: </label>
+              <input type="range" class="personal-slider" id="slider-religious" min="0" max="25" value="0">
+              <span class="value-container"><span class="personal-count" id="count-religious">0</span> hour(s)</span>
+            </div>
+            <hr class="hl">
+
+            <div class="communityService personal-row">
+              <label class="personalSubheads">Community Service: </label>
+              <input type="range" class="personal-slider" id="slider-service" min="0" max="25" value="0">
+              <span class="value-container"><span class="personal-count" id="count-service">0</span> hour(s)</span>
+            </div>
+            <hr class="hl">
+
+            <div class="other personal-row">
+              <label class="personalSubheads">Other: </label>
+              <input type="range" class="personal-slider" id="slider-other" min="0" max="25" value="0">
+              <span class="value-container"><span class="personal-count" id="count-other">0</span> hour(s)</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="colPerNec2"><hr class="vl"></div>
+
+        <div class="colPerNec3">
+          <br><h2>Necessities</h2><br><br><br>
+
+          <div class="necessity" id="section-essentials">
+            <label class="necessitySubheads">Essentials: </label>
+            <input type="range" class="nes-slider" id="slider-essentials" min="0" max="25" value="0">
+            <span class="nes-count" id="count-essentials">0</span> hour(s)
+            <p class="necessityPSA">Eating, showering, chores, etc.</p>
+          </div>
+          <hr class="hl">
+
+          <div class="necessity" id="section-downtime">
+            <label class="necessitySubheads">Down Time: </label>
+            <input type="range" class="nes-slider" id="slider-downtime" min="0" max="25" value="0">
+            <span class="nes-count" id="count-downtime">0</span> hour(s)
+            <p class="necessityPSA">Meditation, transportation, etc.</p>
+          </div>
+          <hr class="hl">
+
+          <div class="necessity" id="section-family">
+            <label class="necessitySubheads">Family/Play Time: </label>
+            <input type="range" class="nes-slider" id="slider-family" min="0" max="25" value="0">
+            <span class="nes-count" id="count-family">0</span> hour(s)
+            <p class="necessityPSA">Family, friends, social media, movies/TV, video games, etc.</p>
+          </div>
+          <hr class="hl">
+
+          <div class="necessity" id="section-other">
+            <label class="necessitySubheads">Other: </label>
+            <input type="range" class="nes-slider" id="slider-nes-other" min="0" max="25" value="0">
+            <span class="nes-count" id="count-nes-other">0</span> hour(s)
+            <p class="necessityPSA"></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="necessity" id="sleep" style="overflow: hidden; width: 80%; align: center; margin: 0 auto;">
+        <hr class="hl" style="margin-top: 25px;">
+        <h3>Sleep</h3>
+        <p class="sleepPSA" style="width: 80%;">Preset at the recommended 9 hours of sleep a night, however please adjust this to the amount of time you normally sleep.</p><br>
+        
+        <label class="necessitySubheads">Average Sleep per Weekday:</label>
+        <input type="range" class="nes-slider" id="slider-sleep-weekday" min="0" max="12" value="9">
+        <span class="nes-count" id="count-sleep-weekday">9</span> hour(s)
+        <br>
+        
+        <label class="necessitySubheads">Average Sleep per Weekend:</label>
+        <input type="range" class="nes-slider" id="slider-sleep-weekend" min="0" max="12" value="9">
+        <span class="nes-count" id="count-sleep-weekend">9</span> hour(s)
+      
+        <div class="sleepHours">
+          <h4 style="margin: 0 auto;">Total Sleep Hours:</h4>
+          <div class="sleep-row">
+            <span id="numDaysSleepVal">63</span> hours per week
+          </div>
+        </div>
+      </div>      
+      
+      <div style="clear: both;"></div>
+      <hr class="hl">
+
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+      <div class="chart-container" style="width: 100%; max-width: 500px; margin: 30px auto;">
+        <canvas id="timeBudgetChart"></canvas>
+      </div>
+    </main>
+
+    <dialog id="hoursLimitModal" style="border: none; border-radius: 8px; padding: 25px; box-shadow: 0 4px 20px rgba(0,0,0,0.3); text-align: center; max-width: 400px; font-family: 'Open Sans', sans-serif;">
+      <h2 style="color: #e41a1c; margin-top: 0;">Time Limit Exceeded!</h2>
+      <p>You have allocated more than <strong>168 hours</strong> for this week. Please adjust your sliders so your schedule fits into a real week!</p>
+      <button id="closeModalBtn" style="background-color: #333; color: white; border: none; padding: 10px 20px; border-radius: 4px; cursor: pointer; font-size: 14px; margin-top: 10px;">Got it</button>
+    </dialog>
+
+    <div style="text-align: center; margin: 20px auto;">
+      <button id="printPdfBtn" style="background-color: #a7240a; color: white; border: none; padding: 12px 24px; font-size: 16px; font-weight: bold; border-radius: 6px; cursor: pointer;">
+        Print/Save as PDF
+      </button>
+    </div>
+    
+    <script>
+      let csvData = [];
+      let hasAlerted = false; 
+
+      const allRowIds = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'all1', 'all2'];
+      const categoryRows = {};
+
+      allRowIds.forEach(id => {
+        const container = document.getElementById(`row-${id}`);
+        categoryRows[id] = {
+          dropdown: container.querySelector('.dropdown'),
+          slider: container.querySelector('.slider'),
+          valueDisplay: container.querySelector('.slider-value')
+        };
+      });
+
+      fetch('fhsClasses.csv')
+        .then(response => response.text())
+        .then(data => {
+          const rows = data.trim().split('\n');
+          for (let i = 1; i < rows.length; i++) {
+            const columns = rows[i].split(',');
+            if (columns.length >= 4) {
+              const itemName = columns[0].trim();
+              const minVal = Number(columns[1]);
+              const maxVal = Number(columns[2]);
+              const categoryText = columns[3].trim().toLowerCase(); 
+
+              csvData.push({ name: itemName, min: minVal, max: maxVal });
+
+              const letterCategories = ['a', 'b', 'c', 'd', 'e', 'f', 'g'];
+              letterCategories.forEach(letter => {
+                if (categoryText.includes(letter)) {
+                  const option = document.createElement('option');
+                  option.value = itemName;
+                  option.textContent = itemName;
+                  categoryRows[letter].dropdown.appendChild(option);
+                }
+              });
+
+              if (categoryText.length > 0) {
+                ['all1', 'all2'].forEach(id => {
+                  const option = document.createElement('option');
+                  option.value = itemName;
+                  option.textContent = itemName;
+                  categoryRows[id].dropdown.appendChild(option);
+                });
+              }
+            }
+          }
+        })
+        .catch(error => console.error('Error loading CSV:', error));
+
+      // Universal Slider function for tail tracking
+      function updateSingleSliderTrail(sliderTarget) {
+        if (!sliderTarget) return;
+        const min = sliderTarget.min || 0;
+        const max = sliderTarget.max || 100;
+        const value = sliderTarget.value;
+        const percentage = ((value - min) / (max - min)) * 100;
+        
+        sliderTarget.style.setProperty('--slider-value', `${percentage}%`);
+      }
+
+      function updateAllSliderTails() {
+        const allSliders = document.querySelectorAll('.personal-slider, .nes-slider, .schoolDaysSlider, .slider');
+        allSliders.forEach(slider => updateSingleSliderTrail(slider));
+      }
+
+      // Dynamic color updating for Sleep thumbs & track tails
+      function updateSleepColors() {
+        const sleepSliders = [
+          document.getElementById('slider-sleep-weekday'),
+          document.getElementById('slider-sleep-weekend')
+        ];
+        
+        sleepSliders.forEach(slider => {
+          if (slider) {
+            const percentage = (slider.value / slider.max) * 100;
+            const hue = (slider.value / 12) * 120; 
+            slider.style.setProperty('--thumb-color', `hsl(${Math.min(hue, 120)}, 100%, 45%)`);
+            slider.style.setProperty('--slider-value', `${percentage}%`);
+          }
+        });
+      }
+
+      allRowIds.forEach(id => {
+        const elements = categoryRows[id];
+
+        elements.dropdown.addEventListener('change', (e) => {
+          const selectedName = e.target.value;
+          if (selectedName === "") {
+            elements.slider.min = 0;
+            elements.slider.max = 100;
+            elements.slider.value = 0;
+            elements.valueDisplay.textContent = 0;
+            elements.slider.disabled = true; 
+            updateSingleSliderTrail(elements.slider);
+            updateChartData();
+            return; 
+          }
+
+          const classMatch = csvData.find(row => row.name === selectedName);
+          if (classMatch) {
+            elements.slider.min = classMatch.min;
+            elements.slider.max = classMatch.max;
+            elements.slider.value = classMatch.min;
+            elements.valueDisplay.textContent = classMatch.min;
+            elements.slider.disabled = false;
+            updateSingleSliderTrail(elements.slider);
+          }
+        });
+
+        elements.slider.addEventListener('input', (e) => {
+          elements.valueDisplay.textContent = e.target.value;
+          updateSingleSliderTrail(e.target);
+        });
+      });
+
+     function changeNumDaysInSchool(periods, hours) {
+      const periodsSpan = document.getElementById("numPeriods");
+      const hourSpan = document.getElementById("numDaysVal");
+      periodsSpan.textContent = periods;
+      hourSpan.textContent = hours;
+    }
+
+    const numDaysSlider = document.getElementById("numDaysSlider");
+
+    numDaysSlider.addEventListener('input', (e) => {
+      const currentVal = parseInt(e.target.value);
+      if (currentVal === 4) changeNumDaysInSchool(4, 23);
+      else if (currentVal === 5) changeNumDaysInSchool(5, 28);
+      else if (currentVal === 6) changeNumDaysInSchool(6, 34);
+      else if (currentVal === 7) changeNumDaysInSchool(7, 39);
+      
+      updateSingleSliderTrail(e.target);
+    });
+
+    numDaysSlider.dispatchEvent(new Event('input'));
+
+    const personalRows = document.querySelectorAll('.personal-row');
+    personalRows.forEach(row => {
+      const slider = row.querySelector('.personal-slider');
+      const countDisplay = row.querySelector('.personal-count');
+
+      slider.addEventListener('input', (e) => {
+        countDisplay.textContent = e.target.value;
+        updateSingleSliderTrail(e.target);
+      });
+    });
+      
+    const weekdaySlider = document.getElementById('slider-sleep-weekday');
+    const weekdayCount = document.getElementById('count-sleep-weekday');
+    const weekendSlider = document.getElementById('slider-sleep-weekend');
+    const weekendCount = document.getElementById('count-sleep-weekend');
+    const totalSleepDisplay = document.getElementById('numDaysSleepVal');
+
+    function updateSleepCalculations() {
+      const weekdayHours = Number(weekdaySlider.value);
+      const weekendHours = Number(weekendSlider.value);
+
+      weekdayCount.textContent = weekdayHours;
+      weekendCount.textContent = weekendHours;
+
+      const totalWeeklySleep = (weekdayHours * 5) + (weekendHours * 2);
+      totalSleepDisplay.textContent = totalWeeklySleep;
+      updateSleepColors();
+    }
+
+    weekdaySlider.addEventListener('input', updateSleepCalculations);
+    weekendSlider.addEventListener('input', updateSleepCalculations);
+    updateSleepCalculations();
+
+    const necessityIds = ['essentials', 'downtime', 'family', 'nes-other'];
+    necessityIds.forEach(id => {
+      const slider = document.getElementById(`slider-${id}`);
+      const countDisplay = document.getElementById(`count-${id}`);
+      
+      if(slider && countDisplay) {
+        slider.addEventListener('input', (e) => {
+          countDisplay.textContent = e.target.value;
+          updateSingleSliderTrail(e.target);
+        });
+      }
+    });
+      
+    const ctx = document.getElementById('timeBudgetChart').getContext('2d');
+    let timeChart = new Chart(ctx, {
+      type: 'pie',
+      data: {
+        labels: [
+          'Time Not Used', 'School Hours', 'History', 'English', 'Math', 'Science', 
+          'World Language', 'VAPA', 'College Prep', 'Elective 1', 'Elective 2',
+          'Athletics', 'Clubs', 'Job', 'Religious', 'Service', 'Personal Other',
+          'Sleep', 'Essentials', 'Down Time', 'Family/Play Time', 'Necessity Other'
+        ],
+        datasets: [{
+          data: [168, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 63, 0, 0, 0, 0], 
+          backgroundColor: [
+            '#e0e0e0', '#4dc9f6', '#f67019', '#f53794', '#537bc4', '#acc236', 
+            '#166a8f', '#00a950', '#58595b', '#8549ba', '#a3a3a3',
+            '#e41a1c', '#377eb8', '#4daf4a', '#984ea3', '#ff7f00', '#ffff33',
+            '#2ca02c', '#9467bd', '#8c564b', '#e377c2', '#17becf'
+          ]
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { position: 'bottom' },
+          title: { display: true, text: 'Weekly Time Budget Distribution (168 Total Hours)' }
+        }
+      }
+    });
+
+    function updateChartData() {
+      const schoolHours = parseInt(document.getElementById("numDaysVal").textContent) || 0;
+
+      const classHours = allRowIds.map(id => {
+        const dropdown = categoryRows[id].dropdown;
+        if (dropdown.value === "") return 0;
+        return parseInt(categoryRows[id].slider.value) || 0;
+      });
+
+      const personalHours = [
+        parseInt(document.getElementById('slider-athletics').value) || 0,
+        parseInt(document.getElementById('slider-clubs').value) || 0,
+        parseInt(document.getElementById('slider-job').value) || 0,
+        parseInt(document.getElementById('slider-religious').value) || 0,
+        parseInt(document.getElementById('slider-service').value) || 0,
+        parseInt(document.getElementById('slider-other').value) || 0
+      ];
+
+      const sleepHours = parseInt(document.getElementById('numDaysSleepVal').textContent) || 0;
+      
+      const necessityHours = [
+        parseInt(document.getElementById('slider-essentials').value) || 0,
+        parseInt(document.getElementById('slider-downtime').value) || 0,
+        parseInt(document.getElementById('slider-family').value) || 0,
+        parseInt(document.getElementById('slider-nes-other').value) || 0
+      ];
+
+      const totalAllocated = schoolHours + 
+                             classHours.reduce((a, b) => a + b, 0) + 
+                             personalHours.reduce((a, b) => a + b, 0) +
+                             sleepHours +
+                             necessityHours.reduce((a, b) => a + b, 0);
+
+      const modal = document.getElementById('hoursLimitModal');
+      if (modal) {
+        if (totalAllocated > 168) {
+          if (!hasAlerted) {
+            modal.showModal(); 
+            hasAlerted = true; 
+          }
+        } else {
+          hasAlerted = false; 
+        }
+      }
+
+      const timeNotUsed = Math.max(0, 168 - totalAllocated);
+
+      const updatedData = [
+        timeNotUsed,
+        schoolHours,
+        ...classHours,
+        ...personalHours,
+        sleepHours,
+        ...necessityHours
+      ];
+
+      timeChart.data.datasets[0].data = updatedData;
+      timeChart.update();
+      
+      // Update all track visual tails on load/drag update matches
+      updateAllSliderTails();
+      updateSleepColors();
+    }
+
+    // Connect event triggers
+    numDaysSlider.addEventListener('input', updateChartData);
+
+    allRowIds.forEach(id => {
+      categoryRows[id].slider.addEventListener('input', updateChartData);
+      categoryRows[id].dropdown.addEventListener('change', updateChartData);
+    });
+
+    personalRows.forEach(row => {
+      const slider = row.querySelector('.personal-slider');
+      slider.addEventListener('input', updateChartData);
+    });
+
+    weekdaySlider.addEventListener('input', updateChartData);
+    weekendSlider.addEventListener('input', updateChartData);
+
+    necessityIds.forEach(id => {
+      const slider = document.getElementById(`slider-${id}`);
+      if(slider) slider.addEventListener('input', updateChartData);
+    });
+
+    const modalCloseBtn = document.getElementById('closeModalBtn');
+    if (modalCloseBtn) {
+      modalCloseBtn.addEventListener('click', () => {
+        document.getElementById('hoursLimitModal').close();
+      });
+    }
+
+    // Initial load sync
+    updateChartData();
+
+    document.getElementById('printPdfBtn').addEventListener('click', () => {
+      const chartCanvas = document.getElementById('timeBudgetChart');
+      const chartImageSrc = chartCanvas.toDataURL('image/png');
+      const schoolHours = document.getElementById("numDaysVal").textContent || "0";
+      const sleepHours = document.getElementById("numDaysSleepVal").textContent || "0";
+      
+      let homeworkHTML = '';
+      const classRowIds = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'all1', 'all2'];
+      
+      classRowIds.forEach(id => {
+        const rowContainer = document.getElementById(`row-${id}`);
+        if (rowContainer) {
+          const dropdown = rowContainer.querySelector('.dropdown');
+          const sliderVal = rowContainer.querySelector('.slider-value');
+          if (dropdown && dropdown.value !== "") {
+            homeworkHTML += `
+              <div class="row">
+                <span class="label">${dropdown.value}:</span>
+                <span class="val">${sliderVal.textContent || '0'} hrs</span>
+              </div>`;
+          }
+        }
+      });
+
+      if (homeworkHTML === '') {
+        homeworkHTML = '<div class="row" style="color:#aaa; font-style:italic;">No classes selected</div>';
+      }
+
+      const athletics = document.getElementById("count-athletics").textContent || "0";
+      const clubs = document.getElementById("count-clubs").textContent || "0";
+      const job = document.getElementById("count-job").textContent || "0";
+      const religious = document.getElementById("count-religious").textContent || "0";
+      const service = document.getElementById("count-service").textContent || "0";
+      const personalOther = document.getElementById("count-other").textContent || "0";
+
+      const essentials = document.getElementById("count-essentials").textContent || "0";
+      const downtime = document.getElementById("count-downtime").textContent || "0";
+      const family = document.getElementById("count-family").textContent || "0";
+      const nesOther = document.getElementById("count-nes-other").textContent || "0";
+
+      const printWindow = window.open('', '_blank');
+      printWindow.document.write(`
+        <!DOCTYPE html>
+        <html>
+        <head>
+          <title>FHS Time Budget Summary</title>
+          <style>
+            body {
+              font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+              margin: 30px;
+              color: #1a1a1a;
+              font-size: 12px;
+              line-height: 1.2;
+            }
+            h1 { text-align: center; font-size: 18px; margin-bottom: 20px; color: #0b2b75; }
+            .dashboard { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 15px; }
+            .section-title { font-weight: bold; font-size: 13px; border-bottom: 2px solid #0b2b75; padding-bottom: 2px; margin-bottom: 8px; color: #0b2b75; margin-top: 10px; }
+            .row { display: flex; justify-content: space-between; padding: 3px 0; border-bottom: 1px solid #f0f0f0; }
+            .label { color: #555; }
+            .val { font-weight: bold; }
+            .chart-box { text-align: center; margin-top: 10px; }
+            .chart-box img { max-width: 350px; width: 100%; height: auto; }
+          </style>
+        </head>
+        <body>
+          <h1>FHS Time Budget Planner Summary</h1>
+          <div class="dashboard">
+            <div>
+              <div class="section-title">School & Homework Time</div>
+              <div class="row"><span class="label">In-School Hours:</span><span class="val">${schoolHours} hrs</span></div>
+              ${homeworkHTML}
+              <div class="section-title">Personal Time</div>
+              <div class="row"><span class="label">Athletics:</span><span class="val">${athletics} hrs</span></div>
+              <div class="row"><span class="label">School Clubs:</span><span class="val">${clubs} hrs</span></div>
+              <div class="row"><span class="label">Job:</span><span class="val">${job} hrs</span></div>
+              <div class="row"><span class="label">Religious Activities:</span><span class="val">${religious} hrs</span></div>
+              <div class="row"><span class="label">Community Service:</span><span class="val">${service} hrs</span></div>
+              <div class="row"><span class="label">Other Personal:</span><span class="val">${personalOther} hrs</span></div>
+            </div>
+            <div>
+              <div class="section-title">Necessities & Sleep</div>
+              <div class="row"><span class="label">Total Sleep:</span><span class="val">${sleepHours} hrs</span></div>
+              <div class="row"><span class="label">Essentials (Eating, Chores):</span><span class="val">${essentials} hrs</span></div>
+              <div class="row"><span class="label">Down Time:</span><span class="val">${downtime} hrs</span></div>
+              <div class="row"><span class="label">Family / Play Time:</span><span class="val">${family} hrs</span></div>
+              <div class="row"><span class="label">Other Necessities:</span><span class="val">${nesOther} hrs</span></div>
+            </div>
+          </div>
+          <p style="text-align: center;">Student Signature: __________________</p>
+          <p style="text-align: center;">Parent Signature: __________________</p>
+          <p style="text-align: center;">Date: _________</p>
+          <br>
+          <div class="chart-box">
+            <img src="${chartImageSrc}" alt="Time Budget Chart">
+          </div>
+          <script>
+            window.onload = function() {
+              window.print();
+              setTimeout(() => { window.close(); }, 500);
+            };
+          <\/script>
+        </body>
+        </html>
+      `);
+      printWindow.document.close();
+    });
+</script>
+  </body>
+</html>

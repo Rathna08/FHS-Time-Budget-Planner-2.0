@@ -1,0 +1,1019 @@
+body {
+  background-color: #f7fafd;
+  font-family: "Open Sans", sans-serif;
+  margin: 0; 
+}
+
+h1 {
+  font-family: "Faculty Glyphic", sans-serif;
+  font-weight: 400;
+  font-style: bold;
+  text-align: left;
+  margin: 0;
+  color: white;
+  padding: 14px 16px;
+  font-size: 50px;
+}
+
+h3 {
+  text-align: center;
+}
+
+h4 {
+  text-align: center;
+}
+
+bannerText {
+  font-weight: 400;
+  font-style: normal;
+  text-align: left;
+  margin: 0;
+  color: white;
+  padding: 14px 16px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 80px;
+}
+
+.sticky-header1 {
+  background-color: #0b2b75;
+  position: -webkit-sticky; 
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; 
+  box-shadow: 0 2px 6px #681808; 
+
+  display: flex;         
+
+  align-items: center;   
+
+  justify-content: center; 
+
+  gap: 20px;             
+
+  padding: 5px 20px;
+}
+
+.planner-container::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.sticky-header2 {
+  background-color: #000000;
+  position: -webkit-sticky; 
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; 
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15); 
+}
+
+.planner-container::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/*Cols for header*/
+.col21{
+  width: 9%;
+  float: left;
+}
+.col22{
+  width: 17%;
+  text-align: left;
+}
+.col23 {
+  width: 78%;
+  text-align: left;
+  float: left
+}
+
+.personal-necessities-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.colPerNec1 {
+  width: 49%;
+  padding: 12px;
+}
+
+.colPerNec2 {
+  width: 2%;
+  display: flex;
+  justify-content: center;
+}
+
+.colPerNec3 {
+  width: 49%;
+}
+
+.hl{
+   border-top: 1px solid #ccc;
+  width: 100%;
+}
+
+.disclaimer{
+  text-align: center;
+  margin: 0 auto;
+  width: 70%;
+}
+
+.numDaysContainer {
+  text-align: center; 
+  width: 100%;
+}
+
+.hours-row {
+  display: flex;
+  justify-content: center; 
+  align-items: center;     
+  gap: 5px;               
+}
+
+.open-sans-<uniquifier> {
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+.cAndHTime{
+  text-align: center;
+}
+
+/* Container holds the slider layout */
+.slider-group-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  margin: 20px 0;
+}
+
+/* Give the slider container structure room for the labels below it */
+.slider-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 200px; /* Adjust width as needed */
+}
+
+/* Style the datalist to spread evenly across the width of the slider */
+
+/* Style the sleep slider circular handles uniformly */
+.sleepHours input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none !important;
+  appearance: none !important;
+  width: 19px !important;
+  height: 19px !important;
+  border-radius: 50% !important;
+  cursor: pointer !important;
+  background: #66b300 !important; /* Forces a solid starting color */
+}
+
+
+/*Personal Time Styling Code*/
+.personalSliders {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.personal-slider, .nes-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 50%;       
+  max-width: 50%;    
+  height: 8px;
+  border-radius: 4px;
+  outline: none;
+  float: right;
+
+  --slider-value: 0%; 
+
+  background: linear-gradient(
+    to right, 
+    #1946ab 0%, 
+    #1946ab var(--slider-value), 
+    #c9c9c9 var(--slider-value), 
+    #c9c9c9 100%
+  );
+}
+
+.personal-slider::-webkit-slider-thumb, .nes-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #0b2b75;
+  cursor: pointer;
+
+}
+
+.personal-slider::-moz-range-thumb, .nes-slider::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border: none;
+  border-radius: 50%;
+  background: #0b2b75;
+  cursor: pointer;
+}
+
+/*Hours Styling Code*/
+.schoolDaysSlider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 550px; 
+  height: 8px;
+  border-radius: 4px;
+  outline: none;
+  margin-left: 100px;
+
+  --slider-value: 0%; 
+
+  background: linear-gradient(
+    to right, 
+    #1946ab 0%, 
+    #1946ab var(--slider-value), 
+    #c9c9c9 var(--slider-value), 
+    #c9c9c9 100%
+  );
+}
+
+.schoolDaysSlider:disabled {
+  background: #e0e0e0 !important; 
+  cursor: not-allowed;
+}
+
+.schoolDaysSlider:disabled::-webkit-slider-thumb {
+  background: #aeadad;
+  cursor: not-allowed;
+}
+
+.schoolDaysSlider:disabled::-moz-range-thumb {
+  background: #aeadad; 
+  cursor: not-allowed;
+}
+
+.schoolDaysSlider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #0b2b75;
+  cursor: pointer;
+}
+
+.schoolDaysSlider::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border: none;
+  border-radius: 50%;
+  background: #0b2b75;
+  cursor: pointer;
+}
+
+
+/* Base styling for all sliders */
+.slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 200px; 
+  height: 8px;
+  border-radius: 4px;
+  outline: none;
+
+  --slider-value: 0%; 
+
+  background: linear-gradient(
+    to right, 
+    #1946ab 0%, 
+    #1946ab var(--slider-value), 
+    #c9c9c9 var(--slider-value), 
+    #c9c9c9 100%
+  );
+}
+
+.slider:disabled {
+  background: #e0e0e0 !important; 
+  cursor: not-allowed;
+}
+
+.slider:disabled::-webkit-slider-thumb {
+  background: #aeadad; 
+  cursor: not-allowed;
+}
+
+.slider:disabled::-moz-range-thumb {
+  background: #aeadad;
+  cursor: not-allowed;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #0b2b75;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border: none;
+  border-radius: 50%;
+  background: #0b2b75;
+  cursor: pointer;
+}
+
+
+/*Columns to seperate out*/
+.col1{
+  float: left;
+  width: 56%;
+}
+.col2{
+  float: left;
+  width: 2%
+}
+.col3 {
+  float: right;
+  width: 42%;   
+  text-align: center;
+  padding-right: 0;   
+}
+
+/*LINE CODE ---------------------------*/
+
+.horizontal-line {
+  border: none;            
+  border-top: 2px solid #ccc; 
+  width: 100%;         
+  margin: 20px 0;          
+}
+
+.horizontal-line-general {
+  align-items: center; /* Vertically aligns dropdown, slider, and text */
+  margin-bottom: 20px;
+  padding: 1px;
+  border: none;            
+  border-top: 1px solid #ccc; 
+  width: 98%;  
+  margin: 20px 0;   
+}
+
+.vl {
+  border-left: 2px solid #ccc;
+  height: auto;         
+  align-self: stretch;  
+}
+
+      /* Simple CSS to keep the layout organized */
+      .planner-row {
+        margin-bottom: 20px;
+        padding: 10px;
+        border-bottom: 1px solid #ccc;
+         width: 50%;
+      }
+
+      .planner-row label {
+        font-weight: bold;
+        display: inline-block;
+         float: left;
+                 margin-right: 15px;
+
+      }
+      .planner-row select {
+        width: 250px;
+        margin-right: 15px;
+         float: left;
+      }
+.planner-row {
+  display: flex;
+  align-items: center; /* Vertically aligns dropdown, slider, and text */
+  margin-bottom: 20px;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  width: 96%;        /* Keeps the row filling its container box */
+}
+
+/* 2. Control element sizing and spacing */
+.planner-row label {
+  width: 225px;
+  flex-shrink: 0;  
+   font-size: 15px;/* Prevents label text from getting squished */
+}
+
+.planner-row select {
+  width: 250px;
+  margin-right: 15px;
+}
+
+/* 3. Push the slider and hour group to the far right together */
+.planner-row .slider {
+  width: 300px;
+  margin-left: auto;  /* Pushes the slider and everything after it to the right */
+  margin-right: 20px; /* Creates a clean gap right before the numbers */
+}
+
+/* 4. The hours text container sits locked at the very edge */
+.planner-row .value-container {
+  white-space: nowrap; /* Keeps number and "hours" locked side-by-side */
+  min-width: 75px;     /* Optional: Reserves steady space so things don't twitch */
+  text-align: right;
+}
+
+
+
+
+/*Dropdown Style -------------------------------------------------------*/
+.dropdown, 
+::picker(select) {
+  appearance: base-select;
+}
+
+.dropdown:has(option:checked[value=""]) {
+  background-color: #a7240a; 
+}
+
+.dropdown:has(option:checked[value=""]):hover {
+  background-color: #721a08; 
+}
+
+.dropdown {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 11px;
+  background-color: #1946ab; /* Main blue button color */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  outline: none;
+  
+  transition: background-color 0.2s ease;
+
+  padding: 4px 1px 1px 17px; /* Top, Right, Bottom, LEFT padding */
+  /*box-sizing: border-box;       /* Keeps the box exactly 220px wide */
+}
+
+
+/* Changes the main box color on hover */
+.dropdown:hover {
+  background-color: #0b2b75; 
+}
+
+/* Styles for the option menu when it drops down */
+.dropdown option {
+  background-color: #f9f9f9;
+  color: black;
+  padding: 12px 16px;
+}
+
+/* Reset the document layout line before this specific heading */
+h2.cAndHTime + h3 + p + br + div + div + br + h2, 
+h2:not(.cAndHTime):nth-of-type(3) {
+  clear: both !important;
+  display: block !important;
+  width: 100% !important;
+  padding-top: 20px;
+}
+
+/* Keep your split columns cleanly separated beneath the heading */
+.colPerNec1 {
+  clear: left;
+  width: 40%;
+  float: left;
+  margin-left: 20px;
+}
+
+.colPerNec3 {
+  clear: right;
+  width: 45%;
+  float: right;
+  margin-right: 20px;
+}
+
+::picker(select) {
+  background-color: #f9f9f9;
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 4px 0;
+}
+
+.dropdown option:hover {
+  background-color: #e0e0e0;
+}
+
+
+.hl {
+  border: none;
+  outline: none;
+  height: 1px;
+  background-color: #e0e0e0; 
+  margin: 12px 0;         
+  width: 100%;          
+  display: block;      
+  clear: both;          
+}
+
+/* Ensure the wrapper stacks items vertically so the lines sit between rows */
+.personalSliders {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.personal-slider{}
+
+.personalSubheads{
+text-align: left;
+}
+
+.necessity {
+  text-align: left;
+  display: block;
+  width: 100%;
+}
+/* Align both personal rows and necessity rows using Grid */
+
+
+/* Force text labels to align to the strict left edge */
+.personalSubheads, 
+.necessitySubheads, .necessitySubheads {
+  text-align: left;
+}
+.personal-row {
+  display: grid;
+  /* 150px: sets a fixed layout width for your text subheads
+    1fr: allows the slider to stretch completely in the middle
+    80px: ensures enough dedicated room for the "0 hour(s)" text on the right
+  */
+  grid-template-columns: 150px 1fr 80px;
+  
+  align-items: center;    /* Keeps everything perfectly centered vertically */
+  gap: 20px;              /* Gives a nice clean gutter space between columns */
+  width: 100%;            /* Fills out the parent container column */
+  margin: 10px 0;
+}
+
+/* Force the text labels to anchor strictly on the left edge */
+.personalSubheads, .necessitySubheads {
+  text-align: left;
+  font-weight: bold;
+  white-space: nowrap;
+  padding-right: 30px;
+}
+
+/* Forces the hour text elements to never split onto two lines */
+.value-container {
+  white-space: nowrap;
+  text-align: left;
+
+  margin-right: 50px;
+}
+
+/*.sleepPSA{
+  margin: 0 auto;
+  text-align: center;
+  width: 80%;
+  padding: 120px;
+}*/
+
+.necessitiesPSA{
+  text-align: center;
+  width: 80%;
+  
+}
+
+.personal-slider{
+    margin-left: 60px;
+}
+.sleepHours {
+  display: flex;         /* Forces inner elements to sit side-by-side */
+  align-items: center;   /* Perfectly aligns the text vertically */
+  gap: 10px;             /* Adds a clean space between the heading and the number */
+  margin-top: 15px;   
+  /*margin-left: 167px;
+  
+  /* Optional: space above the total section */
+}
+
+/* Remove default browser margins from the heading so it doesn't push things out of alignment */
+.sleepHours h4 {
+  margin: 0;
+}
+
+.subjName{
+  margin-left: 30px;
+  
+}
+
+/* 1. Change the flex layout to a 2-column grid layout */
+.personal-necessities-row {
+  display: grid !important;
+  /* Creates two equal columns with a gap in the middle */
+  grid-template-columns: 1fr 1fr; 
+  gap: 30px;
+  width: 100%;
+}
+
+/* 2. Reposition elements inside the grid columns */
+
+/* Force "Personal Time" heading into the left column (Column 1) */
+.personal-necessities-row > h2:first-of-type {
+  grid-column: 1;
+  grid-row: 1;
+  text-align: center !important;
+  margin-bottom: 10px;
+}
+
+/* Force the Personal Sliders block into the left column right under its heading */
+.colPerNec1 {
+  grid-column: 1;
+  grid-row: 2;
+  width: 100% !important;
+  padding: 0 !important;
+}
+
+/* Force the "Necessities" container into the right column (Column 2) */
+.colPerNec3 {
+  grid-column: 2;
+  grid-row: 1 / span 2; /* Lets it handle both its heading and sliders naturally */
+  width: 100% !important;
+  padding-right: 20px;
+}
+
+/* 3. Hide or fix layout pieces that mess up the new structure */
+
+/* Hide the old vertical divider line container so it doesn't create a weird 3rd column gap */
+.colPerNec2 {
+  display: none !important;
+}
+
+/* Reset the strict margins on the headings inside the right column */
+.colPerNec3 h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  text-align: center;
+}
+/* ==========================================================================
+   COLUMNS & SPACING ADJUSTMENTS
+   ========================================================================== */
+
+.personal-necessities-row {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr; 
+  width: 100%;
+  
+  /* 1. ADJUST OUTER MARGINS HERE */
+  /* Adds space on the left and right edges of the entire layout row */
+  padding-left: 40px;   /* Increase or decrease to move left column away from edge */
+  padding-right: 40px;  /* Increase or decrease to move right column away from edge */
+  box-sizing: border-box; /* Keeps everything fitting nicely within the screen */
+
+  /* 2. ADJUST SPACING BETWEEN THE TWO MAIN COLUMNS */
+  /* This controls the empty gap directly down the middle of the screen */
+  gap: 50px; 
+}
+/* ==========================================================================
+   FIX TRAILING RIGHT WHITESPACE & HORIZONTAL SCROLL
+   ========================================================================== */
+
+/* 1. The Global Safety Net: Clip any rogue element breaking out of the bounds */
+/* ==========================================================================
+   FIX TRAILING RIGHT WHITESPACE & RESTORE STICKY BANNER
+   ========================================================================== */
+
+/* 1. RESTORE STICKY BANNER: Remove overflow rules from html/body so sticky works again */
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: visible; 
+}
+
+/* 2. NEW SAFETY NET: Clip rogue layout pieces INSIDE the planner wrapper instead */
+.planner-container {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;   /* Cuts off the trailing whitespace safely down here! */
+  box-sizing: border-box;
+}
+
+/* 3. Fix the School Days Slider breaking out on mid-to-small screens */
+.schoolDaysSlider {
+  width: 100% !important;     
+  max-width: 550px;           
+  margin-left: 0 !important;  
+}
+
+/* 4. Fix the Homework Rows bursting out of their split columns */
+.planner-row {
+  width: 100% !important;     
+  box-sizing: border-box !important; 
+}
+
+/* 5. Tame the excessive margins pushing things past the right side of the container */
+.planner-row .value-container {
+  margin-right: 10px !important; 
+}
+/* ==========================================================================
+   FIX SLEEP HOURS WHITESPACE GAP
+   ========================================================================== */
+
+/* ==========================================================================
+   CENTER ALIGN SLEEP HOURS IN THE COLUMN MIDDLE
+   ========================================================================== */
+
+.sleepHours {
+  display: flex !important;       
+  flex-direction: row !important; 
+  align-items: center !important;   /* Keeps them aligned perfectly straight vertically */
+  justify-content: center !important; /* <--- THIS snaps the whole block to the horizontal center */
+  gap: 8px !important;            
+  
+  width: 100% !important;           /* Forces the wrapper to span the full column so it can calculate the true center */
+  margin-left: 0 !important;      
+  margin-top: 20px !important;    /* Adds uniform breathing space above the totals */
+  padding: 0 !important;
+}
+
+/* Clear any lingering alignment offsets on the text tags inside */
+.sleepHours h4 {
+  margin: 0 !important;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: right; /* Aligns toward the center gap */
+}
+
+.sleepHours .sleep-row {
+  margin: 0 !important;
+  padding: 0 !important;
+  font-size: 16px;
+  text-align: left;  /* Aligns away from the center gap */
+}
+
+
+
+/*IMAGES----------------------*/
+img {
+  padding: 15px 30px; /* 15px top/bottom, 30px left/right */
+}
+: 0 auto;/
+
+
+
+button:hover{
+  background-color: #721a08;
+}
+
+
+@media screen and (min-width: 600px){
+  .sleepPSA{
+    margin-left: 140px;
+  }
+  
+}
+
+@media screen and (max-width: 600px) {
+  
+  .sticky-header1 {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    padding: 15px 10px !important;
+    height: auto !important;
+  }
+
+  .col21, .col22, .col23 {
+    width: 100% !important;
+    display: block !important;
+    margin: 5px 0 !important;
+    text-align: center !important;
+  }
+
+  .col21 img {
+    width: 100px !important;
+    height: auto !important;
+    padding: 5px !important;
+  }
+
+  .planner-container, 
+  .homework-columns-container,
+  .main-content-wrapper,
+  div[class*="container"],
+  div[class*="row"],
+  div[class*="grid"],
+  .homework-columns-container > div {
+    display: flex !important;
+    flex-direction: column !important; 
+    align-items: stretch !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 10px !important;
+    margin-left: 0 !important;   
+    margin-right: 0 !important;  
+    box-sizing: border-box !important;
+  }
+
+  div[class*="container"] > div,
+  div[class*="row"] > div,
+  fieldset, 
+  .form-group,
+  .sleepHours,
+  .sleep-row {
+    display: block !important;
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  label,
+  select, 
+  input[type="range"],
+  input[type="number"],
+  input[type="text"],
+  .value-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 8px 0 !important;
+    box-sizing: border-box !important;
+    display: block !important;
+    text-align: left !important;
+  }
+
+  h1 {
+    font-size: 1.4rem !important;
+    line-height: 1.2 !important;
+    margin-left: px;
+  }
+
+  h2 {
+    font-size: 1.2rem !important;
+    margin-top: 25px !important;
+  }
+
+  h3, h4 {
+    font-size: 1.1rem !important;
+    text-align: center !important;
+    width: 100% !important;
+  }
+
+  .sleepHours h4, 
+  .sleepHours .sleep-row, .sleepPSA {
+    text-align: center !important;
+    width: 100% !important;
+    margin: 10px 0 !important;
+  }
+
+  .sleepPSA{
+    margin: 0 auto !important;
+  }
+  
+}
+
+/* --- Complete Mobile Vertical Stack Layout (600px and below) --- */
+@media screen and (max-width: 600px) {
+  
+  /* 1. Permanently Clean & Compact Mobile Header (No image, no sub-labels) */
+  .sticky-header1 {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    padding: 12px 10px !important;
+    height: auto !important;
+    position: sticky !important;
+    top: 0;
+    z-index: 1000;
+  }
+
+  /* Completely wipe out the bulldog image container */
+  .col21 {
+    display: none !important;
+  }
+
+  /* Completely wipe out "Folsom High School / Home of the Bulldogs" */
+  .col22 {
+    display: none !important;
+  }
+
+  /* Force the main title wrapper to be full-width and centered */
+  .col23 {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    text-align: center !important;
+  }
+
+  /* Style the standalone title perfectly for mobile view */
+  .sticky-header1 h2 {
+    font-size: 1.3rem !important;
+    margin: 0 !important;
+    line-height: 1.2 !important;
+  }
+
+  /* ==========================================================================
+     2. Force All Main Layout Blocks and Form Rows to Stack Vertically 
+     ========================================================================== */
+  .planner-container, 
+  .homework-columns-container,
+  .main-content-wrapper,
+  div[class*="container"],
+  div[class*="row"],
+  div[class*="grid"],
+  .homework-columns-container > div {
+    display: flex !important;
+    flex-direction: column !important; /* Converts horizontal side-by-sides to top-to-bottom stacks */
+    align-items: stretch !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 10px !important;
+    margin-left: 0 !important;   /* Destroys desktop indentations pushing items off-screen */
+    margin-right: 0 !important;  
+    box-sizing: border-box !important;
+  }
+
+  /* Strip Columns and Padding on All Children Fields & Forms */
+  div[class*="container"] > div,
+  div[class*="row"] > div,
+  fieldset, 
+  .form-group,
+  .sleepHours,
+  .sleep-row {
+    display: block !important;
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Make Inputs, Sliders, Dropdowns, and Labels Stretch Full Width */
+  label,
+  select, 
+  input[type="range"],
+  input[type="number"],
+  input[type="text"],
+  .value-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 8px 0 !important;
+    box-sizing: border-box !important;
+    display: block !important;
+    text-align: left !important;
+  }
+
+  /* Scale Down Content Font Sizes to Prevent Title Overflow */
+  h1 {
+    font-size: 1.4rem !important;
+    line-height: 1.2 !important;
+  }
+
+  h2 {
+    font-size: 1.2rem !important;
+    margin-top: 25px !important;
+  }
+
+  h3, h4 {
+    font-size: 1.1rem !important;
+    text-align: center !important;
+    width: 100% !important;
+  }
+
+  /* Clean up Sleep Total Row Alignment */
+  .sleepHours h4, 
+  .sleepHours .sleep-row {
+    text-align: center !important;
+    width: 100% !important;
+    margin: 10px 0 !important;
+  }
+}
+
+/* --- Fullscreen Chart Modal --- */
+
+
+
+
